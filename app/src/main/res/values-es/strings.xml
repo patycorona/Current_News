@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Noticias actuales</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="link_Salir">Salir</string>
+    <string name="title">Noticias actuales</string>
+    <string name="user_name">Usuario: </string>
+    <string name="password">Contraseña: </string>
+    <string name="link_Reg"><u>Registrarse</u></string>
+    <string name="login_enter">Entrar</string>
+    <string name="link_emailVisintante">Ingresar correo lector</string>
+    <string name="description_img">Imagen de la noticia</string>
+    <string name="name_news">titulo de la noticia</string>
+
+    <string name="author">Descripción de la noticia</string>
+    <string name="link_Regresar">Regresar</string>
+
+    <string name="text_news">
+        En México es usual comer esta sopa por las noches, y es clásica en las fiestas patrias o durante las frías noches de invierno; aunque algunas familias también preparan este delicioso platillo durante las celebraciones de fin de año.
+
+El pozole original se prepara con maíz cacahuazintle seco y con parte de la cabeza del puerco. El maíz seco agrega un sabor incomparable a esta sopa, pero hoy en día es más común que se use como sustituto el maíz que se vende en lata, por la conveniencia de que ya está cocido.
+
+Pozole rojo receta - Una de las mejores recetas de Pozole rojo en el internet
+
+En esta receta usaremos maíz de lata y carne de puerco y costilla, porque en algunas partes es muy difícil encontrar maíz seco y carne de cabeza de puerco. Aunque esta receta es para el pozole rojo, en México también se cocina el pozole verde y el blanco.
+
+Si no comes carne de puerco puedes utilizar pollo, si así gustas, o pavo (guajolote), y sabe riquísimo. Prueba la receta, así si alguién te pregunta si ya sabes cómo hacer Pozole, ya les puedes decir que sí!
+
+Esta receta rinde para 6 porciones generosas (y quizás tengas sobrantes para un rico recalentado).
+
+
+En una olla con el agua coloca la cebolla, el ajo, la sal, la carne y las costillas y coloca a hervir.
+Retira la espuma y la grasa mientras se cocina la carne.
+Cuando la carne este lista retírala del caldo, retira del caldo la grasa, los huesos de las costillas, la cebolla y el ajo.
+Agrega todos los ingredientes a tu licuadora y licualos hasta obtener una salsa suave.
+Luego calienta el aceite en la sartén; agrega la salsa, y sal al gusto.
+
+Agrega la salsa al caldo, deja hervir y añada la carne. Después de 10 minutos, agrega el maíz y sazona con sal y pimienta.
+Sirva tu pozole rojo en un plato pozolero y coloca la guarnición a un lado.
+
+¡Buen provecho!
+    </string>
+    <string name="title_userRegister">Registro Usuario</string>
+    <string name="first_name">Nombre(s):</string>s
+    <string name="last_name">Apellido(s):</string>
+    <string name="email">Correo Electrónico:</string>
+    <string name="repeatPassword">Repetir Contraseña:</string>
+</resources>

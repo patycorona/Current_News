@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="recipebook_line_min">2</integer>
+    <integer name="recipebook_line_max">1500</integer>
+</resources>

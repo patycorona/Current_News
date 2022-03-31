@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">current news</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="link_Salir">Exit</string>
+    <string name="title">Current News</string>
+    <string name="user_name">User: </string>
+    <string name="password">Password: </string>
+    <string name="link_Reg"><u>Register</u></string>
+    <string name="login_enter">Enter</string>
+    <string name="link_emailVisintante">Enter reader email</string>
+    <string name="description_img">the image news</string>
+    <string name="name_news">Name news</string>
+
+    <string name="author">Description News</string>
+    <string name="link_Regresar">come back</string>
+
+    <string name="text_news">
+       In Mexico it is usual to eat this soup at night, and it is classic in the national holidays or during the cold winter nights; although some families also prepare this delicious dish during the end of the year celebrations.
+
+The original pozole is prepared with dry cacahuazintle corn and part of the and salt to taste.
+
+Add the sauce to the broth, bring to a boil and add the meat. After 10 minutes, add the corn and season with salt and pepper.
+Serve your red pozole in a pozole dish and place the garnish on the side.
+
+Bon Apetit!
+    </string>
+    <string name="title_userRegister">User Register</string>
+    <string name="first_name">First Name:</string>
+    <string name="last_name">Last Name:</string>
+    <string name="email">Email:</string>
+    <string name="repeatPassword">Repeat password</string>
+</resources>
