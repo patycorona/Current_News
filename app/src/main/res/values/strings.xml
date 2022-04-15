@@ -10,8 +10,9 @@
     <string name="login_enter">Enter</string>
     <string name="link_emailVisintante">Enter reader email</string>
     <string name="description_img">the image news</string>
-    <string name="name_news">Name news</string>
-
+    <string name="name_news">Title News</string>
+    <string name="closed">closed</string>
+    <string name="AddNew">Add New</string>
     <string name="author">Description News</string>
     <string name="link_Regresar">come back</string>
 
@@ -30,4 +31,7 @@ Bon Apetit!
     <string name="last_name">Last Name:</string>
     <string name="email">Email:</string>
     <string name="repeatPassword">Repeat password</string>
+    <string name="description_news">news description</string>
+    <string name="link_Compartir">To share</string>
+    <string name="text_save">Save</string>
 </resources>

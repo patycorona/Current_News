@@ -11,6 +11,8 @@
     <string name="link_emailVisintante">Ingresar correo lector</string>
     <string name="description_img">Imagen de la noticia</string>
     <string name="name_news">titulo de la noticia</string>
+    <string name="closed">Cerrar</string>
+    <string name="AddNew">Agregar Noticia</string>
 
     <string name="author">Descripción de la noticia</string>
     <string name="link_Regresar">Regresar</string>
@@ -45,4 +47,7 @@ Sirva tu pozole rojo en un plato pozolero y coloca la guarnición a un lado.
     <string name="last_name">Apellido(s):</string>
     <string name="email">Correo Electrónico:</string>
     <string name="repeatPassword">Repetir Contraseña:</string>
+    <string name="description_news">descripción de la noticia</string>
+    <string name="link_Compartir">Compartit</string>
+    <string name="text_save">Guardar</string>
 </resources>

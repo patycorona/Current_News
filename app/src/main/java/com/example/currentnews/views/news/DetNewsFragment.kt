@@ -6,9 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.currentnews.R
+import dagger.hilt.android.AndroidEntryPoint
 
-
-class Det_News_Fragment : Fragment() {
+@AndroidEntryPoint
+class DetNewsFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +29,7 @@ class Det_News_Fragment : Fragment() {
 
         @JvmStatic
         fun newInstance() =
-            Det_News_Fragment().apply {
+            DetNewsFragment().apply {
                 arguments = Bundle().apply { }
             }
     }

@@ -21,6 +21,18 @@
             android:layout_height="wrap_content"
             >
 
+            <ImageView
+                android:id="@+id/btn_AddNews"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_add_news"
+                android:visibility="invisible"
+                android:layout_marginEnd="@dimen/commo_padding_default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
             <TextView
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
@@ -32,6 +44,20 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+            <TextView
+                android:id="@+id/tv_salir"
+                android:text="@string/link_Salir"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commo_padding_default"
+                android:visibility="invisible"
+                android:layout_marginStart="@dimen/with_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/commo_padding_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
 

@@ -1,31 +1,40 @@
 package com.example.currentnews.views.login
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.currentnews.R
-import com.example.currentnews.databinding.ActivityMainBinding
+import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.example.currentnews.databinding.FragmentLoginBinding
 import com.example.currentnews.models.Screen
+import com.example.currentnews.models.user.AccessResultModel
+import com.example.currentnews.viewmodel.NewsViewModel
 import com.example.currentnews.views.main.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
-     var binding: FragmentLoginBinding? = null
+    var binding: FragmentLoginBinding? = null
+    private val viewModelUserAccess: NewsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentLoginBinding.inflate(
-            LayoutInflater.from(context), null, false)
+            LayoutInflater.from(context), null, false
+        )
 
         initListener()
 
@@ -34,6 +43,12 @@ class LoginFragment : Fragment() {
 
     private fun initListener() {
 
+        binding?.btnEnter?.setOnClickListener {
+            validUser(
+                binding?.edUserName?.text.toString(),
+                binding?.edPassword?.text.toString()
+            )
+        }
         binding?.tvSalir?.setOnClickListener {
             onDestroyView()
             (activity as MainActivity)
@@ -41,16 +56,39 @@ class LoginFragment : Fragment() {
         }
         binding?.tvRegistro?.setOnClickListener {
             (activity as MainActivity)
-                .changeScreenProccess(Screen.FragmentRegister)
+                .changeScreenProccess(Screen.UserRegisterFragment)
         }
         binding?.tvEmailVisitante?.setOnClickListener {
             (activity as MainActivity)
-                .changeScreenProccess(Screen.FragmentItemNews)
+                .changeScreenProccess(Screen.ItemNewsFragment)
         }
-        binding?.btnEnter?.setOnClickListener {
-            (activity as MainActivity)
-                .changeScreenProccess(Screen.FragmentItemNews)
+
+        initLoginObserver()
+    }
+
+    // Callback
+    private val useraccessResult = Observer<AccessResultModel> { accessResultModel ->
+        if (accessResultModel.code == "0") {
+
+            binding?.btnEnter?.setOnClickListener {
+                Toast.makeText(requireContext(), "Bienvenido", Toast.LENGTH_SHORT).show()
+
+                (activity as MainActivity)
+                    .changeScreenProccess(Screen.MainFragment)
+            }
+        } else {
+
+            Toast.makeText(requireContext(), "the username or password is invalid", Toast.LENGTH_SHORT).show()
+            // Toast.makeText(this,"the username or password is invalid", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun initLoginObserver() {
+        viewModelUserAccess.userAccessResult.observe(viewLifecycleOwner, useraccessResult)
+    }
+
+    fun validUser(user: String, pwd: String) {
+        viewModelUserAccess.userValidation(user, pwd)
     }
 
     companion object {

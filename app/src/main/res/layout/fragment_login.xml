@@ -27,44 +27,28 @@
 
     </Toolbar>
 
-
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/height_login"
-        android:layout_marginTop="@dimen/marginTop_login"
-        android:layout_marginLeft="@dimen/commo_padding_default"
-        android:text="@string/user_name"
-        android:textSize="@dimen/text_Size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/ed_userName"
         android:layout_width="@dimen/edit_text_width"
         android:layout_height="@dimen/height_login"
+        android:hint="User:"
+        android:text="admin@admin.com"
         android:layout_marginTop="@dimen/marginTop_login"
-        app:layout_constraintStart_toEndOf="@+id/tvName"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
-    <TextView
-        android:id="@+id/tvPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/height_login"
-        android:layout_marginLeft="@dimen/commo_padding_default"
-        android:layout_marginTop="@dimen/commo_padding_default"
-        android:text="@string/password"
-        android:textSize="@dimen/text_Size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/ed_password"
         android:layout_width="@dimen/edit_text_width"
         android:layout_height="@dimen/height_login"
+        android:hint="Password"
+        android:text="Password123"
         android:layout_marginTop="@dimen/commo_padding_default"
-        app:layout_constraintStart_toEndOf="@+id/tvPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_userName" />
 
 
@@ -79,11 +63,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_password" />
 
+    <TextView
+        android:id="@+id/tv_Message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color_reg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_Registro"/>
+
+
     <Button
         android:id="@+id/btn_Enter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginTop_ItemRB"
+        android:layout_marginTop="@dimen/height_login"
         android:text="@string/login_enter"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
