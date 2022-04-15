@@ -4,9 +4,9 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class NewsModel (
+class NewsModel(
+    var id: Int,
     var title: String = "",
     var news: String = "",
     var image: String = ""
-): Parcelable
-
+) : Parcelable
