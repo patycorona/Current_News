@@ -33,8 +33,7 @@ class NewsViewModel @Inject constructor(
         MutableLiveData<AccessResultModel>()
     }
 
-
-     //Login
+    // Login
     fun userValidation(email: String, pwd: String) {
 
         compositeDisposable += userAccessRepository.userAccess(
@@ -53,11 +52,11 @@ class NewsViewModel @Inject constructor(
             })
     }
 
-    //add News
+    // add News
     fun addNewsValidation(id: Int, title: String, news: String, image: String) {
 
         compositeDisposable += newsRepository.addNews(
-           id = id, title = title, news = news, image = image
+            id = id, title = title, news = news, image = image
         )
             .subscribeOn(Schedulers.io())
             .subscribe({ accessResultModel ->
@@ -74,7 +73,7 @@ class NewsViewModel @Inject constructor(
 
     fun getNews() {
 
-        compositeDisposable += newsRepository.getNews()
+        compositeDisposable += newsRepository.getAllNews()
             .subscribeOn(Schedulers.io())
             .subscribe({ listNewsR ->
                 listNewsRs.postValue(

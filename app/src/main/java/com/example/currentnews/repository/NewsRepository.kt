@@ -25,7 +25,7 @@ class NewsRepository @Inject constructor(
             }
     }
 
-    fun getNews(): Single<MutableList<NewsModel>> {
+    fun getAllNews(): Single<MutableList<NewsModel>> {
         return apiService.getNews()
             .map { newsR ->
                 newsR.toModel()

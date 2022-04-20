@@ -18,5 +18,4 @@ internal fun NewsResponse.toModel(): MutableList<NewsModel> {
     }
 
     return newsList
-
 }
