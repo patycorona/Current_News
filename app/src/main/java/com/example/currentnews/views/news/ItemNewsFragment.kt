@@ -38,7 +38,7 @@ class ItemNewsFragment() : Fragment() {
     private fun shareOptions() {
         val sendIntent: Intent = Intent().apply {
             action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT,"share news")
+            putExtra(Intent.EXTRA_TEXT, "share news")
             type = "text/plain"
         }
         // preguntar a marco si es correcto originalmente solo lleva el this

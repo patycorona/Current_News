@@ -2,9 +2,7 @@ package com.example.currentnews.extension
 
 import android.graphics.Bitmap
 import android.util.Base64
-
 import java.io.ByteArrayOutputStream
-
 
 fun Bitmap.toByteArray(quality: Int): ByteArray {
 

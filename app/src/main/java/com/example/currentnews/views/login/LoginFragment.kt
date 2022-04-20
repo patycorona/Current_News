@@ -37,6 +37,7 @@ class LoginFragment : Fragment() {
         )
 
         initListener()
+        initLoginObserver()
 
         return binding?.root
     }
@@ -62,29 +63,29 @@ class LoginFragment : Fragment() {
             (activity as MainActivity)
                 .changeScreenProccess(Screen.ItemNewsFragment)
         }
-
-        initLoginObserver()
     }
 
     // Callback
-    private val useraccessResult = Observer<AccessResultModel> { accessResultModel ->
+    private val useraccessResultObserver = Observer<AccessResultModel> { accessResultModel ->
         if (accessResultModel.code == "0") {
 
-            binding?.btnEnter?.setOnClickListener {
-                Toast.makeText(requireContext(), "Bienvenido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Bienvenido", Toast.LENGTH_SHORT).show()
 
-                (activity as MainActivity)
-                    .changeScreenProccess(Screen.MainFragment)
-            }
+            (activity as MainActivity)
+                .changeScreenProccess(Screen.MainFragment)
         } else {
 
-            Toast.makeText(requireContext(), "the username or password is invalid", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                "the username or password is invalid",
+                Toast.LENGTH_SHORT
+            ).show()
             // Toast.makeText(this,"the username or password is invalid", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun initLoginObserver() {
-        viewModelUserAccess.userAccessResult.observe(viewLifecycleOwner, useraccessResult)
+        viewModelUserAccess.userAccessResult.observe(viewLifecycleOwner, useraccessResultObserver)
     }
 
     fun validUser(user: String, pwd: String) {
