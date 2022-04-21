@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,101 +10,140 @@
         android:id="@+id/regresar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/link_Regresar"
-        android:textColor="@color/text_color_reg"
         android:layout_marginStart="@dimen/commo_padding_min"
         android:layout_marginTop="@dimen/commo_padding_min"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/link_Regresar"
+        android:textColor="@color/text_color_reg"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@id/tvtitle"
-        android:textSize="@dimen/text_Size_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title_userRegister"
-        android:gravity="center_horizontal"
         android:layout_marginTop="@dimen/commo_padding_middle"
-        app:layout_constraintTop_toBottomOf="@id/regresar"
+        android:gravity="center_horizontal"
+        android:text="@string/title_userRegister"
+        android:textSize="@dimen/text_Size_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/regresar" />
 
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/ed_firstName"
-        android:layout_width="@dimen/edit_text_width"
-        android:layout_height="@dimen/height_login"
-        android:hint="Firts Name:"
-        android:text="Lilu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvtitle"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/id_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/height_login"
-        android:layout_marginStart="@dimen/commo_padding_min"
-        />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/ed_lastName"
-        android:layout_width="@dimen/edit_text_width"
-        android:layout_height="@dimen/height_login"
-        android:hint="Last Name:"
-        android:text="Chao"
-        app:layout_constraintStart_toStartOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_firstName"
-        android:layout_marginTop="@dimen/marginTop_ItemRB"
-        android:layout_marginStart="@dimen/commo_padding_min"
-        />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/ed_email"
-        android:layout_width="@dimen/edit_text_width"
-        android:layout_height="@dimen/height_login"
-        android:hint="Email:"
-        android:text="Admin@admin.com"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_lastName"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="@dimen/commo_padding_min"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tvtitle">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/ed_pwd"
-        android:layout_width="@dimen/edit_text_width"
-        android:layout_height="@dimen/height_login"
-        android:hint="Password:"
-        android:text="Password123"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_email"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="@dimen/commo_padding_min"
-        />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_firstName"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200"
+            android:hint="Firts Name:"
+            android:maxLines="1"
+            android:text="Lilu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvtitle" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/ed_repeat_pwd"
-        android:layout_width="@dimen/edit_text_width"
-        android:layout_height="@dimen/height_login"
-        android:hint="Repeat password:"
-        android:text="Password123"
-        app:layout_constraintStart_toStartOf="parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/id_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_pwd"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="@dimen/commo_padding_min"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_lastName"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:hint="Last Name:"
+            android:text="Chao"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_firstName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/id_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_email"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:hint="Email:"
+            android:text="Admin@admin.com"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_lastName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/id_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_pwd"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:hint="Password:"
+            android:text="Password123"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_email" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/id_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_4"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_repeat_pwd"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:hint="Repeat password:"
+            android:text="Password123"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_pwd" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btnuserRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/link_Reg"
         android:layout_marginTop="@dimen/marginTop_login"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_repeat_pwd"
+        android:text="@string/link_Reg"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
