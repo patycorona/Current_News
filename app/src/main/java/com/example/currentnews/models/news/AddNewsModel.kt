@@ -4,8 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class NewsModel(
-    var id: Int,
+class AddNewsModel(
     var title: String = "",
     var news: String = "",
     var image: String = ""

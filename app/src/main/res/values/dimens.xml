@@ -14,6 +14,7 @@
     <dimen name="text_Size_title">30dp</dimen>
     <dimen name="spacing_24dp">24dp</dimen>
     <dimen name="with_email">260dp</dimen>
+    <dimen name="modal_height">750dp</dimen>
     <dimen name="edit_text_width2">220dp</dimen>
     <dimen name="edit_text_width_min">170dp</dimen>
 </resources>
