@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.currentnews.models.news.NewsResult
 import com.example.currentnews.models.user.AccessResultModel
+import com.example.currentnews.repository.AddNewsRepository
 import com.example.currentnews.repository.NewsRepository
 import com.example.currentnews.repository.UserAccessRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,7 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class NewsViewModel @Inject constructor(
     var userAccessRepository: UserAccessRepository,
-    var newsRepository: NewsRepository
+    var newsRepository: NewsRepository,
+    var addNewsRepository: AddNewsRepository
 ) : ViewModel() {
 
     // ayuda a liberar los recursos cuando utilizamos programacion reactiva
@@ -53,10 +55,10 @@ class NewsViewModel @Inject constructor(
     }
 
     // add News
-    fun addNewsValidation(id: Int, title: String, news: String, image: String) {
+    fun addNewsValidation(title: String, news: String, image: String) {
 
-        compositeDisposable += newsRepository.addNews(
-            id = id, title = title, news = news, image = image
+        compositeDisposable += addNewsRepository.AddNewNews(
+            title = title, news = news, image = image
         )
             .subscribeOn(Schedulers.io())
             .subscribe({ accessResultModel ->

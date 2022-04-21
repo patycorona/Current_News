@@ -1,11 +1,11 @@
 package com.example.currentnews.views.user
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.currentnews.databinding.FragmentUserRegisterBinding
@@ -14,7 +14,6 @@ import com.example.currentnews.models.user.AccessResultModel
 import com.example.currentnews.viewmodel.UserRegisterViewModel
 import com.example.currentnews.views.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.lifecycle.HiltViewModel
 
 @AndroidEntryPoint
 class UserRegisterFragment : Fragment() {
@@ -24,17 +23,18 @@ class UserRegisterFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //initListener()
-
+        // initListener()
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentUserRegisterBinding.inflate(
-            LayoutInflater.from(context), null, false)
+            LayoutInflater.from(context), null, false
+        )
 
         initUserRegisterObserver()
         initListener()
@@ -42,18 +42,17 @@ class UserRegisterFragment : Fragment() {
     }
 
     private fun initUserRegisterObserver() {
-        viewModelUserRegister.userRegisterLD.observe(viewLifecycleOwner,userRegisterResult)
+        viewModelUserRegister.userRegisterLD.observe(viewLifecycleOwner, userRegisterResult)
     }
 
-    //Callback
+    // Callback
     private val userRegisterResult = Observer<AccessResultModel> { accessResultModel ->
         if (accessResultModel.code == "0") {
-            Toast.makeText(requireContext(),"Successful registration", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Successful registration", Toast.LENGTH_SHORT).show()
             (activity as MainActivity)
                 .changeScreenProccess(Screen.LoginFragment)
-
-        }else{
-            Toast.makeText(requireContext(),"an error has ocurred", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(requireContext(), "an error has ocurred", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -73,9 +72,8 @@ class UserRegisterFragment : Fragment() {
         }
     }
 
-    fun userRegister(name:String, lastName:String, email:String, password:String)
-    {
-        viewModelUserRegister.userRegister(name,lastName,email,password)
+    fun userRegister(name: String, lastName: String, email: String, password: String) {
+        viewModelUserRegister.userRegister(name, lastName, email, password)
     }
 
     companion object {
@@ -85,5 +83,4 @@ class UserRegisterFragment : Fragment() {
                 arguments = Bundle().apply { }
             }
     }
-
 }

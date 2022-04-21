@@ -1,6 +1,8 @@
 package com.example.currentnews.api
 
 import com.example.currentnews.models.NewsResponse
+import com.example.currentnews.models.news.AddNewsRequest
+import com.example.currentnews.models.news.AddNewsResponse
 import com.example.currentnews.models.news.NewsRequest
 import com.example.currentnews.models.user.UserAccessResponse
 import com.example.currentnews.models.user.UserRegisterRequest
@@ -19,7 +21,7 @@ interface CoreHomeApi {
 
     @POST("//news")
     @Headers("Content-Type: application/json ")
-    fun addNewNews(@Body addNewsRequest: NewsRequest): Single<UserAccessResponse>
+    fun addNewNews(@Body addNewsRequest: AddNewsRequest): Single<UserAccessResponse>
 
     @POST("/register_user_new")
     @Headers("Content-Type: application/json ")

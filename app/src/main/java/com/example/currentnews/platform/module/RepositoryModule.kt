@@ -7,11 +7,10 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
 
-
 @Module
 @InstallIn(ActivityComponent::class)
 class RepositoryModule {
     @Provides
     fun userRegisterRepositoryPrivider(apiService: CoreHomeApi):
-            NewsRepository = NewsRepository(apiService)
+        NewsRepository = NewsRepository(apiService)
 }
