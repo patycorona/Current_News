@@ -53,10 +53,10 @@ class NewsViewModel @Inject constructor(
     }
 
     // add News
-    fun addNewsValidation(id: Int, title: String, news: String, image: String) {
+    fun addNewsValidation(title: String, news: String, image: String) {
 
         compositeDisposable += newsRepository.addNews(
-            id = id, title = title, news = news, image = image
+            title = title, news = news, image = image
         )
             .subscribeOn(Schedulers.io())
             .subscribe({ accessResultModel ->

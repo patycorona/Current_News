@@ -27,30 +27,48 @@
 
     </Toolbar>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/ed_userName"
-        android:layout_width="@dimen/edit_text_width"
-        android:layout_height="@dimen/height_login"
-        android:hint="User:"
-        android:text="admin@admin.com"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tool_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/marginTop_login"
-        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_userName"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:hint="User:"
+            android:text="admin@admin.com"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/til_1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_password"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:text="Password123"
+            android:layout_marginTop="@dimen/commo_padding_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_userName" />
 
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/ed_password"
-        android:layout_width="@dimen/edit_text_width"
-        android:layout_height="@dimen/height_login"
-        android:hint="Password"
-        android:text="Password123"
-        android:layout_marginTop="@dimen/commo_padding_default"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_userName" />
-
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tv_Registro"
@@ -61,7 +79,7 @@
         android:layout_marginTop="@dimen/commo_padding_middle"
         android:layout_marginEnd="@dimen/commo_padding_middle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_password" />
+        app:layout_constraintTop_toBottomOf="@+id/til_2" />
 
     <TextView
         android:id="@+id/tv_Message"
