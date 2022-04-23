@@ -99,8 +99,9 @@ class NewsDetBottomSheet(
         @JvmStatic
         fun newInstance(
             title: String,
-            image: String,
-            news: String
+            news: String,
+            image: String
+
         ): NewsDetBottomSheet {
             return NewsDetBottomSheet(title, news, image)
         }

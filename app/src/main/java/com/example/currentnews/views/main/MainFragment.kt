@@ -30,7 +30,8 @@ class MainFragment : Fragment() {
                 val adapter = NewsAdapter(
                     it,
                     onItemClickListener,
-                    requireContext()
+                    requireContext(),
+                    onItemClickToShare
                 )
                 binding?.recyclerview?.adapter = adapter
                 adapter.notifyDataSetChanged()
@@ -43,10 +44,6 @@ class MainFragment : Fragment() {
         binding = FragmentMainBinding.inflate(layoutInflater)
         // setContentView(binding?.root)
         // return binding?.root
-
-        initRecycler()
-        initObserver()
-        viewModelNews.getNews()
     }
 
     override fun onCreateView(
@@ -60,7 +57,8 @@ class MainFragment : Fragment() {
         )
 
         initRecycler()
-
+        initObserver()
+        viewModelNews.getNews()
         return binding?.root
     }
 
@@ -70,14 +68,17 @@ class MainFragment : Fragment() {
         // meter aqui el  redirect para el BottomSheet
         NewsDetBottomSheet.newInstance(
             news.title,
-            news.image,
-            news.news
+            news.news,
+            news.image
         )
             .show(requireActivity().supportFragmentManager, "")
     }
+    private var onItemClickToShare: (() -> Unit) = {
+        //codigo para compartir
+    }
 
     private fun initObserver() {
-        viewModelNews.listNewsRs.observe(this, listNewsObserver)
+        viewModelNews.listNewsRs.observe(viewLifecycleOwner, listNewsObserver)
     }
 
     // preguntar a  marco

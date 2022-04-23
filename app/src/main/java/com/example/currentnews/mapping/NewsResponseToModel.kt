@@ -1,6 +1,5 @@
 package com.example.currentnews.mapping
 
-import com.example.currentnews.models.NewsResponse
 import com.example.currentnews.models.news.ManyNewsResponse
 import com.example.currentnews.models.news.NewsModel
 
