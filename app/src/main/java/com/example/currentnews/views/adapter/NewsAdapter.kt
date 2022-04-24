@@ -16,7 +16,8 @@ import com.example.currentnews.models.news.NewsModel
 class NewsAdapter(
     private val dataSource: MutableList<NewsModel>,
     var onListHitItemClickListener: ((newsModel: NewsModel) -> Unit),
-    val context: Context
+    val context: Context,
+    val onItemClickToShare: (() -> Unit)
 ) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

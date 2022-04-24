@@ -71,6 +71,7 @@ class NewsViewModel @Inject constructor(
             })
     }
 
+    // get All News
     fun getNews() {
 
         compositeDisposable += newsRepository.getAllNews()
