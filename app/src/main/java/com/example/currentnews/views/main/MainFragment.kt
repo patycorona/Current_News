@@ -1,5 +1,6 @@
 package com.example.currentnews.views.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -73,8 +74,19 @@ class MainFragment : Fragment() {
         )
             .show(requireActivity().supportFragmentManager, "")
     }
-    private var onItemClickToShare: (() -> Unit) = {
-        //codigo para compartir
+    private var onItemClickToShare: ((newsmodel: NewsModel) -> Unit) = { news ->
+        shareOptions(news.title)
+    }
+
+    private fun shareOptions(title:String) {
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, "share news, $title")
+            type = "text/plain"
+        }
+        // preguntar a marco si es correcto originalmente solo lleva el this
+        val shareIntent = Intent.createChooser(sendIntent, this.toString())
+        startActivity(shareIntent)
     }
 
     private fun initObserver() {

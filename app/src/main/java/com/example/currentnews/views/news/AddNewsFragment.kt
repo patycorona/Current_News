@@ -65,6 +65,9 @@ class AddNewsFragment : Fragment() {
                 photoBase64.toString()
             )
         }
+        binding?.tvcerrar?.setOnClickListener {
+            onDestroyView()
+        }
 
         iniCam()
         initAddNewsObserver()
@@ -143,5 +146,10 @@ class AddNewsFragment : Fragment() {
             AddNewsFragment().apply {
                 arguments = Bundle().apply { }
             }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 }

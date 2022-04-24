@@ -1,6 +1,5 @@
 package com.example.currentnews.views.news
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,22 +27,7 @@ class ItemNewsFragment() : Fragment() {
             LayoutInflater.from(context), null, false
         )
 
-        binding?.tvCompartir?.setOnClickListener {
-            shareOptions()
-        }
-
         return binding?.root
-    }
-
-    private fun shareOptions() {
-        val sendIntent: Intent = Intent().apply {
-            action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, "share news")
-            type = "text/plain"
-        }
-        // preguntar a marco si es correcto originalmente solo lleva el this
-        val shareIntent = Intent.createChooser(sendIntent, this.toString())
-        startActivity(shareIntent)
     }
 
     companion object {
