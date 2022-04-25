@@ -17,7 +17,7 @@ class NewsAdapter(
     private val dataSource: MutableList<NewsModel>,
     var onListHitItemClickListener: ((newsModel: NewsModel) -> Unit),
     val context: Context,
-    val onItemClickToShare: (() -> Unit)
+    val onItemClickToShare: ((newsModel: NewsModel) -> Unit)
 ) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -50,6 +50,9 @@ class NewsAdapter(
 
         viewHolder.root.setOnClickListener {
             onListHitItemClickListener.invoke(dataSource[position])
+        }
+        viewHolder.root.setOnClickListener {
+            onItemClickToShare.invoke(dataSource[position])
         }
     }
 
