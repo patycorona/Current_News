@@ -60,12 +60,13 @@
             android:id="@+id/tv_Compartir"
             android:text="@string/link_Compartir"
             android:textColor="@color/text_color_reg"
+            android:layout_marginTop="10dp"
+            android:elevation="@dimen/commo_padding_middle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/commo_padding_middle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
                 />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
