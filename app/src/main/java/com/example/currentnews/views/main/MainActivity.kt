@@ -31,13 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     fun changeFragment(fragment: Fragment) {
         // poner el boton invisible por default
-        if (fragment is MainFragment) {
-            binding?.btnAddNews?.visibility = View.VISIBLE
-            binding?.tvSalir?.visibility = View.VISIBLE
-        } else {
-            binding?.btnAddNews?.visibility = View.GONE
-            binding?.tvSalir?.visibility = View.GONE
-        }
+
         val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
         ft.replace(R.id.Fragment_principal, fragment)
         ft.commit()
@@ -52,10 +46,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun createAddNewsControlVisivility(visivility: Boolean) {
+        if (visivility) {
+            binding?.btnAddNews?.visibility = View.VISIBLE
+            binding?.tvSalir?.visibility = View.VISIBLE
+        } else {
+            binding?.btnAddNews?.visibility = View.GONE
+            binding?.tvSalir?.visibility = View.GONE
+        }
+    }
+
     fun changeScreenProccess(typeScreen: Screen) {
         when (typeScreen) {
             Screen.MainA -> {
-                finish()
+                openMainFragment()
+                createAddNewsControlVisivility(false)
             }
             Screen.LoginFragment -> {
                 openLoginFragment()
@@ -64,6 +69,7 @@ class MainActivity : AppCompatActivity() {
                 openRegisterFragment()
             }
             Screen.MainFragment -> {
+                createAddNewsControlVisivility(true)
                 openMainFragment()
             }
             Screen.ItemNewsFragment -> {
