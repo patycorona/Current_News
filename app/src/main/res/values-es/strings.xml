@@ -48,6 +48,6 @@ Sirva tu pozole rojo en un plato pozolero y coloca la guarnición a un lado.
     <string name="email">Correo Electrónico:</string>
     <string name="repeatPassword">Repetir Contraseña:</string>
     <string name="description_news">descripción de la noticia</string>
-    <string name="link_Compartir">Compartit</string>
+    <string name="link_Compartir">Compartir</string>
     <string name="text_save">Guardar</string>
 </resources>

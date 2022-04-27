@@ -25,6 +25,7 @@ class NewsAdapter(
         var title: TextView = view.findViewById(R.id.tv_title_News) as TextView
         var news: TextView = view.findViewById(R.id.tv_description_news) as TextView
         var image: ImageView = view.findViewById(R.id.img_news) as ImageView
+        var toShare: TextView = view.findViewById(R.id.tv_Compartir) as TextView
         var root: ConstraintLayout =
             view.findViewById(R.id.layout_item_news) as ConstraintLayout
     }
@@ -48,11 +49,11 @@ class NewsAdapter(
             .circleCrop()
             .into(viewHolder.image)
 
-        viewHolder.root.setOnClickListener {
-            onListHitItemClickListener.invoke(dataSource[position])
+        viewHolder.toShare.setOnClickListener {
+            onItemClickToShare.invoke(dataSource[position])
         }
         viewHolder.root.setOnClickListener {
-            onItemClickToShare.invoke(dataSource[position])
+            onListHitItemClickListener.invoke(dataSource[position])
         }
     }
 

@@ -19,6 +19,8 @@ import com.example.currentnews.views.adapter.NewsAdapter
 import com.example.currentnews.views.component.NewsDetBottomSheet
 import dagger.hilt.android.AndroidEntryPoint
 
+private const val ARG_PARAM1 = "visit"
+
 @AndroidEntryPoint
 class MainFragment : Fragment() {
 
@@ -42,9 +44,6 @@ class MainFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentMainBinding.inflate(layoutInflater)
-        // setContentView(binding?.root)
-        // return binding?.root
     }
 
     override fun onCreateView(
@@ -74,11 +73,12 @@ class MainFragment : Fragment() {
         )
             .show(requireActivity().supportFragmentManager, "")
     }
+
     private var onItemClickToShare: ((newsmodel: NewsModel) -> Unit) = { news ->
         shareOptions(news.title)
     }
 
-    private fun shareOptions(title:String) {
+    private fun shareOptions(title: String) {
         val sendIntent: Intent = Intent().apply {
             action = Intent.ACTION_SEND
             putExtra(Intent.EXTRA_TEXT, "share news, $title")
@@ -104,22 +104,12 @@ class MainFragment : Fragment() {
         }
     }
 
-    /*  private fun initListener() {
-          binding?.tvSalir?.setOnClickListener {
-              (activity as MainActivity)
-                  .finish()
-          }
-          binding?.btnAddNews?.setOnClickListener {
-              (activity as MainActivity)
-                  .changeScreenProccess(Screen.AddNewsFragment)
-          }
-      }*/
-
     companion object {
 
         @JvmStatic
         fun newInstance() = MainFragment().apply {
-            arguments = Bundle().apply {}
+            arguments = Bundle().apply {
+            }
         }
     }
 }

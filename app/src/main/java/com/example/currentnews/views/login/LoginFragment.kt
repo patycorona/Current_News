@@ -61,7 +61,7 @@ class LoginFragment : Fragment() {
         }
         binding?.tvEmailVisitante?.setOnClickListener {
             (activity as MainActivity)
-                .changeScreenProccess(Screen.ItemNewsFragment)
+                .changeScreenProccess(Screen.MainA)
         }
     }
 
