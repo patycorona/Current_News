@@ -12,12 +12,12 @@
             android:id="@+id/img_news"
             android:layout_width="@dimen/marginTop_image"
             android:layout_height="@dimen/marginTop_image"
-            android:layout_margin="@dimen/commo_padding_min"
+            android:layout_marginStart="@dimen/commo_padding_min"
             android:contentDescription="@string/description_img"
             android:src="@drawable/playa"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toTopOf="@id/separator"/>
 
         <TextView
             android:id="@+id/tv_title_News"
@@ -46,11 +46,11 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_title_News"/>
 
         <View
+            android:id="@+id/separator"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/purple"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/separator"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_news"
